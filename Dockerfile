@@ -2,6 +2,6 @@ FROM node:10
 
 WORKDIR /app
 COPY . /app
-RUN npm i
+RUN yarn
 
 ENTRYPOINT [ "node", "/app/main.js" ]

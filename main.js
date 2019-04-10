@@ -2,6 +2,8 @@
     const axios = require('axios')
     const flex = require('./flex.json')
 
+    console.log(process.env)
+
     const {
         DRONE_REPO_NAME,
         DRONE_COMMIT_MESSAGE,

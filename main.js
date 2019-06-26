@@ -13,11 +13,13 @@
         CI_BUILD_NUMBER,
         DRONE_BUILD_STATUS,
         DRONE_COMMIT_LINK,
+        DRONE_BUILD_LINK,
         PLUGIN_ACCESS_TOKEN,
         PLUGIN_TO,
         DRONE_BUILD_NUMBER
     } = process.env
 
+    flex.altText = `${DRONE_REPO_NAME}(${DRONE_COMMIT_BRANCH}) build ${CI_BUILD_NUMBER || DRONE_BUILD_NUMBER} ${DRONE_BUILD_STATUS}`
     flex.contents.body.contents[1].text = DRONE_REPO_NAME
     flex.contents.body.contents[2].text = DRONE_COMMIT_MESSAGE
     flex.contents.body.contents[4].contents[0].contents[1].text = DRONE_COMMIT_BRANCH
@@ -27,6 +29,7 @@
     flex.contents.body.contents[4].contents[4].contents[1].text = DRONE_BUILD_STATUS
     flex.contents.body.contents[4].contents[4].contents[1].color = DRONE_BUILD_STATUS === 'success' ? '#33aa55' : '#cc3d33'
     flex.contents.body.contents[5].contents[0].action.uri = DRONE_COMMIT_LINK
+    flex.contents.body.contents[5].contents[1].action.uri = DRONE_BUILD_LINK
 
     await axios.post('https://api.line.me/v2/bot/message/push',
         {

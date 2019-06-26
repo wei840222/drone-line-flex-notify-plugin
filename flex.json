@@ -1,6 +1,6 @@
 {
     "type": "flex",
-    "altText": "Git Dev Notify",
+    "altText": "Git Notify",
     "contents": {
         "type": "bubble",
         "body": {
@@ -9,7 +9,7 @@
             "contents": [
                 {
                     "type": "text",
-                    "text": "Git Dev Notify",
+                    "text": "Git Notify",
                     "weight": "bold",
                     "wrap": false,
                     "color": "#1DB446",
@@ -230,11 +230,25 @@
                             "type": "button",
                             "action": {
                                 "type": "uri",
-                                "label": "See Changes",
+                                "label": "Changes",
                                 "uri": "'$DRONE_COMMIT_LINK'"
                             },
                             "flex": 1,
-                            "margin": "none",
+                            "margin": "md",
+                            "height": "md",
+                            "style": "primary",
+                            "color": "#9b9b9b",
+                            "gravity": "center"
+                        },
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "uri",
+                                "label": "Build",
+                                "uri": "'$DRONE_BUILD_LINK'"
+                            },
+                            "flex": 1,
+                            "margin": "md",
                             "height": "md",
                             "style": "primary",
                             "color": "#9b9b9b",

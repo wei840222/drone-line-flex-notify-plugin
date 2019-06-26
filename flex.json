@@ -1,6 +1,6 @@
 {
     "type": "flex",
-    "altText": "Git Notify",
+    "altText": "Drone Notify",
     "contents": {
         "type": "bubble",
         "body": {
@@ -9,7 +9,7 @@
             "contents": [
                 {
                     "type": "text",
-                    "text": "Git Notify",
+                    "text": "Drone Notify",
                     "weight": "bold",
                     "wrap": false,
                     "color": "#1DB446",

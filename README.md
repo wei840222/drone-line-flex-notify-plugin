@@ -5,9 +5,17 @@ See [Doc](https://developers.line.biz/en/reference/messaging-api/#send-push-mess
 
 2. Add following step in your drone pipeline
 ```
-pipeline:
-    line-flex-notify:
-        image: wei840222/drone-line-flex-notify-plugin
-        access_token: chanel accessToken
-        to: userId, groupId, or roomId
+kind: pipeline
+name: default
+
+steps:
+- name: notify
+  image: wei840222/drone-line-flex-notify-plugin
+  settings:
+    access_token: chanel accessToken
+    to: userId, groupId, or roomId
+  when:
+    status:
+    - failure
+    - success
 ```
